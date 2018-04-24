@@ -11,6 +11,9 @@
 
 相关code+完整数据可见[百度云盘链接][5]  密码: m8ma
 
+推荐与搜索模块再结合豆瓣内部的API就更加牛逼~~~！（[豆瓣API][11]）
+
+
 ----------
 
 
@@ -223,3 +226,4 @@ neo4j开启的一种方法就是docker启动，neo4j的docker下载地址：http
   [8]: https://github.com/mattzheng/DouBanRecommend/blob/master/douban_kg/book1.png
   [9]: https://github.com/mattzheng/DouBanRecommend/blob/master/douban_kg/book_2.png
   [10]: https://github.com/mattzheng/DouBanRecommend/blob/master/douban_kg/book3.png
+  [11]: https://developers.douban.com/wiki/?title=api_v2
