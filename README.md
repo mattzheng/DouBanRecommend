@@ -1,8 +1,6 @@
 # DouBanRecommend
 基于豆瓣图书的推荐、知识图谱与知识引擎简单构建neo4j
 
-# 基于apple.turicreate的图书推荐算法
-
 本项目主要贡献源来自豆瓣爬虫（数据源）[lanbing510/DouBanSpider][1]、知识图谱引擎[Agriculture_KnowledgeGraph][2]、[apple.turicreate][3]中内嵌的推荐算法。
 主要拿来做练习，数据来源可见[lanbing510/DouBanSpider][4]。
 
