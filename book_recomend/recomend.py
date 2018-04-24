@@ -1,29 +1,10 @@
-
-
 import turicreate
 import os, time, random
-import shutil
-import cv2
-import matplotlib.pyplot as plt
-from PIL import Image, ImageDraw, ImageFont
-from io import BytesIO
 import numpy as np
 from tqdm import tqdm
 from glob import glob
 import json
-import time
 import pandas as pd
-from multiprocessing import Pool 
-
-
-def traverseDirByGlob(path):
-    path = os.path.expanduser(path)
-    list={}
-    i=0
-    for f in glob(path + '/*'):
-        list[i]=f.strip()
-        i=i+1
-    return list
 
 # ------ 基于item的推荐 ------ 
 def similar_item_data(similar_item,top = 10):
@@ -41,7 +22,7 @@ def item_recomend(search_word,book_excel_all,recomend_item,topn = 5):
     #print(similar_item)
     return similar_item_data(similar_item,top=topn)
 
-# ------ 基于item的推荐 ------ 
+# ------ 搜索 ------ 
 def search(search_word,book_excel_all):
     '''
     搜索逻辑：
