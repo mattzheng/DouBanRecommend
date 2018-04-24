@@ -11,6 +11,11 @@
  - 豆瓣图书推荐 + 搜索模块
  - 豆瓣图书知识库简单应用（Neo4j的使用）
 
+相关code+完整数据可见[百度云盘链接][5]  密码: m8ma
+
+----------
+
+
 # 一、数据整理
 简单的把爬虫数据进行简单的整理。主要做了一下针对每本书的评分，数据源中有两个值得用的字段：豆瓣书籍评分 + 书籍阅读人数，先等级化，然后进行平均，简单的得到了该书籍的得分。
 
@@ -21,12 +26,17 @@
     book_excel_all['scores'] = (book_excel_all['rank_rank'] + book_excel_all['people_num_rank'])/2
 
 得到了如图的内容：
-![此处输入图片的描述][5]
+![此处输入图片的描述][6]
 那么就开始做练习题啦~
+
+
+
+----------
+
 
 # 二、豆瓣图书推荐 + 搜索模块
 推荐 + 搜索模块主要使用的是apple.turicreate模块的算法，那么该模块的使用可见：
-[推荐模块︱apple.Turicreate个性化推荐recommender（五）][6]
+[推荐模块︱apple.Turicreate个性化推荐recommender（五）][7]
 简单贴个当时整理的图。
 
 推荐算法 | 函数名 | 内容 |结果
@@ -55,7 +65,7 @@
     search(search_word,book_excel_all)
 
 得到的结果可见：
-![此处输入图片的描述][7]
+![此处输入图片的描述][8]
 
 ## 2.2 推荐模块：
 
@@ -72,11 +82,13 @@
     item_recomend(search_word,book_excel_all,recomend_item,topn = 10)
 
 结果：
-![此处输入图片的描述][8]
+![此处输入图片的描述][9]
 
 ## 2.3 推荐对应表生成模块
 根据核心数据源，利用apple.turicreate平台的基于item的推荐，主要是以书籍类别为主要筛选对象，对书籍类别进行相关推荐，输入信息表，输出相关推荐表格。如表格:`item_data_item.csv`
 
+
+----------
 
 
 # 二、豆瓣图书知识库简单应用（Neo4j的使用）
@@ -104,6 +116,8 @@
     
     3W节点 - 25.7W关系 - 3h时间 - 1002MB
 
+
+----------
 
 
 ## 一、neo4j的docker启动
@@ -134,15 +148,20 @@ neo4j开启的一种方法就是docker启动，neo4j的docker下载地址：http
 
 打开之后需要等待一段时间的启动。
 
-![此处输入图片的描述][9]
+![此处输入图片的描述][10]
 
 **已经导入的数据怎么保存？**
 
 备份Neo4j的数据:
+
     1)停掉数据库.
+    
     2)备份D:\Neo4J\neo4j-enterprise-1.9.1\data目录下graph.db目录中的所有内容.
+    
     3)在服务器上拷贝graph.db目录中的内容到新的服务器的相同目录中,启动即可.
 
+
+----------
 
 
 ## 二、数据导入模块
@@ -200,8 +219,9 @@ neo4j开启的一种方法就是docker启动，neo4j的docker下载地址：http
   [2]: https://github.com/mattzheng/Agriculture_KnowledgeGraph
   [3]: https://github.com/apple/turicreate
   [4]: https://github.com/lanbing510/DouBanSpider
-  [5]: https://github.com/mattzheng/DouBanRecommend/blob/master/douban_kg/book_2.png
-  [6]: https://blog.csdn.net/sinat_26917383/article/details/78979830
-  [7]: https://github.com/mattzheng/DouBanRecommend/blob/master/douban_kg/book1.png
-  [8]: https://github.com/mattzheng/DouBanRecommend/blob/master/douban_kg/book_2.png
-  [9]: https://github.com/mattzheng/DouBanRecommend/blob/master/douban_kg/book3.png
+  [5]: https://pan.baidu.com/s/1DhWIdLBaPdHcO94DMRPzwA
+  [6]: https://github.com/mattzheng/DouBanRecommend/blob/master/douban_kg/book_2.png
+  [7]: https://blog.csdn.net/sinat_26917383/article/details/78979830
+  [8]: https://github.com/mattzheng/DouBanRecommend/blob/master/douban_kg/book1.png
+  [9]: https://github.com/mattzheng/DouBanRecommend/blob/master/douban_kg/book_2.png
+  [10]: https://github.com/mattzheng/DouBanRecommend/blob/master/douban_kg/book3.png
